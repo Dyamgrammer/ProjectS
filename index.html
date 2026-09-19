@@ -113,6 +113,22 @@
             opacity: 1;
         }
 
+        /* Moving Ticker Marquee Styles */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
         .photo-frame {
             position: relative;
         }
@@ -159,6 +175,35 @@
         </div>
     </nav>
 
+    <!-- Moving Skill Ticker Bar -->
+    <div class="relative w-full overflow-hidden bg-cyber-card border-b border-cyber-border py-3 z-40">
+        <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none"></div>
+
+        <div class="animate-marquee flex items-center space-x-6">
+            <!-- First Set -->
+            <div class="flex items-center space-x-6 text-xs font-tech tracking-widest uppercase text-gray-300">
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-cloud text-white"></i> Microsoft Azure</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-code-branch text-white"></i> Azure DevOps</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-brands fa-github text-white"></i> GitHub</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-terminal text-white"></i> CI/CD Pipelines</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-laptop-code text-white"></i> JavaScript</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-pen-nib text-white"></i> UI/UX Design</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-image text-white"></i> Photoshop</span>
+            </div>
+            <!-- Duplicate Set for Seamless Loop -->
+            <div class="flex items-center space-x-6 text-xs font-tech tracking-widest uppercase text-gray-300" aria-hidden="true">
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-cloud text-white"></i> Microsoft Azure</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-code-branch text-white"></i> Azure DevOps</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-brands fa-github text-white"></i> GitHub</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-terminal text-white"></i> CI/CD Pipelines</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-laptop-code text-white"></i> JavaScript</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-pen-nib text-white"></i> UI/UX Design</span>
+                <span class="flex items-center gap-2 bg-black px-3 py-1.5 border border-cyber-border"><i class="fa-solid fa-image text-white"></i> Photoshop</span>
+            </div>
+        </div>
+    </div>
+
     <section id="about" class="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
         <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
             
@@ -166,9 +211,17 @@
                 <div class="inline-block px-3 py-1 mb-4 border border-white/30 text-xs font-tech tracking-widest uppercase bg-white/5 text-gray-300">
                     Associate Software Engineer
                 </div>
+                
                 <h1 class="text-4xl sm:text-6xl font-black text-white uppercase tracking-tight mb-6 glow-text">
-                    Jam Aubrey<br><span class="text-gray-400">Manalo Go</span>
+                    Jam Aubrey<br>
+                    <span class="text-gray-400 inline-flex items-center gap-3">
+                        <span>Manalo Go</span>
+                        <span class="inline-flex items-center justify-center w-7 h-7 bg-white text-black rounded-full text-xs shadow-[0_0_15px_rgba(255,255,255,0.8)] align-middle" title="Verified Associate Software Engineer">
+                            <i class="fa-solid fa-check text-[10px]"></i>
+                        </span>
+                    </span>
                 </h1>
+
                 <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl font-medium">
                     Associate Software Engineer at Accenture with a hardworking mindset, a deep passion for continuous learning, and a natural ability to quickly adapt to new technologies. Specializing in Microsoft Azure cloud infrastructure, CI/CD pipeline troubleshooting, and GitHub repository migrations, while seamlessly bridging technical execution with creative expertise in UI/UX prototyping, web design, photo manipulation, and video production.
                 </p>
